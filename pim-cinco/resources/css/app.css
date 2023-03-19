@@ -83,6 +83,13 @@ form
 {
     @apply px-4;
 }
+
+.namePerson
+{
+    @apply font-bold;
+}
+
+
 /*END COMPONENTS*/
 
 

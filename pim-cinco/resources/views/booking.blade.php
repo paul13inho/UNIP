@@ -15,9 +15,9 @@
             <div>
                 <x-input-label for="day_shift" :value="__('Escolha o turno:')" />
                 <select name="day_shift" id="day_shift">
-                    <option value="morning">Matutino</option>
-                    <option value="afternoon">Vespertino</option>
-                    <option value="night">Noturno</option>
+                    @foreach($data as $row => $data)
+                        <option value="{{$row->id}}">{{$row->name}}</option>
+                    @endforeach
                 </select>
             </div>
 

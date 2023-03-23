@@ -9,9 +9,11 @@ module.exports = {
         extend: {
             width: {
                 "default": "400px",
+                "booking": "380px",
             },
             height: {
                 "default": "700px",
+                "booking": "450px",
             }
         },
     },

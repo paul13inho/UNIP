@@ -6,10 +6,13 @@
             <p>*-*Data de hoje*-*</p>
         </div>
 
-        <form action="">
+        <form method="POST" action="">
+
+            @csrf
+
             <div>
                 <x-input-label for="booking_date" :value="__('Escolha o dia:')" />
-                <input type="date" name="booking_date" id="booking_date">
+                <input type="date" name="booked_for" id="booked_for">
             </div>
 
             <div>

@@ -18,15 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('day_shift_id');
             $table->unsignedBigInteger('class_shift_id');
             $table->unsignedBigInteger('equipment_id');
-            $table->unsignedBigInteger('status_id');
 
             $table->foreign('day_shift_id')->references('id')->on('day_shifts');
 
             $table->foreign('class_shift_id')->references('id')->on('class_shifts');
 
             $table->foreign('equipment_id')->references('id')->on('equipment');
-
-            $table->foreign('status_id')->references('id')->on('statuses');
         });
     }
 

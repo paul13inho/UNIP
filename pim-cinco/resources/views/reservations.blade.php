@@ -7,8 +7,21 @@
         </div>
 
         <div class="bookings">
-            <p class="insert-from-db">vem do banco</p>
-            <p class="cancel">X</p>
+            <ul>
+
+                @foreach($booking as $row)
+                    <li class="flex justify-between my-4 p-2 bg-purple-300 place-items-center pl-4 w-booking rounded-lg">
+                        <div>{{$row->day_shift_id}}</div>
+                        <div>{{$row->class_shift_id}}</div>
+                        <div>{{$row->equipment_id}}</div>
+                        <div>{{$row->booked_for}}</div>
+                        <p class="cancel">X</p>
+
+                    </li>
+
+                @endforeach
+            </ul>
+
         </div>
 
         <a href="{{ route('dashboard') }}">

@@ -15,7 +15,7 @@
             <div>
                 <x-input-label for="day_shift" :value="__('Escolha o turno:')" />
                 <select name="day_shift" id="day_shift">
-                    @foreach($data as $row => $data)
+                    @foreach($dayShift as $row)
                         <option value="{{$row->id}}">{{$row->name}}</option>
                     @endforeach
                 </select>
@@ -24,26 +24,18 @@
             <div>
                 <x-input-label for="class_shift" :value="__('Escolha a aula:')" />
                 <select name="class_shift" id="class_shift">
-                    <option value="1">Aula 1</option>
-                    <option value="2">Aula 2</option>
-                    <option value="3">Aula 3</option>
-                    <option value="4">Aula 4</option>
-                    <option value="5">Aula 5</option>
+                    @foreach($classShift as $row)
+                        <option value="{{$row->id}}">{{$row->name}}</option>
+                    @endforeach
                 </select>
             </div>
 
             <div>
                 <x-input-label for="equipment" :value="__('Escolha o equipamento:')" />
                 <select name="equipment" id="equipment">
-                    <option value="1">DVD - 1</option>
-                    <option value="2">DVD - 2</option>
-                    <option value="3">DVD - 3</option>
-                    <option value="4">Projetor - 1</option>
-                    <option value="5">Projetor - 2</option>
-                    <option value="6">Projetor - 3</option>
-                    <option value="7">Aparelho de som - 1</option>
-                    <option value="8">Aparelho de som - 2</option>
-                    <option value="9">Aparelho de som - 3</option>
+                    @foreach($equipment as $row)
+                        <option value="{{$row->id}}">{{$row->name}}</option>
+                    @endforeach
                 </select>
             </div>
 

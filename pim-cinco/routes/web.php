@@ -28,6 +28,7 @@ Route::get('booking', [PageController::class, 'index']);
 Route::post('booking', [PageController::class, 'store']);
 
 Route::get('reservations', [ReservationsController::class, 'index']);
+Route::delete('reservations', [ReservationsController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

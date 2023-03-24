@@ -4,7 +4,7 @@
 
         <div class="header">
             <p>Bem vindo <span class="namePerson">{{ Auth::user()->name }}</span></p>
-            <p>*-*Data de hoje*-*</p>
+            <p>{{\Illuminate\Support\Carbon::now()->format('d-m-Y')}}</p>
         </div>
 
         <div class="options">

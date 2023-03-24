@@ -12,7 +12,7 @@
 
         <div class="header">
             <p>Colégio Vencer Sempre</p>
-            <p>*-*Data de hoje*-*</p>
+            <p>{{\Illuminate\Support\Carbon::now()->format('d-m-Y')}}</p>
         </div>
 
         <div class="container-form flex justify-around">

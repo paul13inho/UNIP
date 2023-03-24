@@ -3,22 +3,29 @@
     <div class="container-see-and-cancel">
         <div class="header">
             <p>Seus Agendamentos:</p>
-            <p>*-*Data de hoje*-*</p>
+            <p>{{\Illuminate\Support\Carbon::now()->format('d-m-Y')}}</p>
         </div>
 
-        <div class="bookings">
+        <div class="bookings overflow-x-hidden w-booking">
             <ul>
+                @foreach($bookings as $booking)
+                    <li class="register flex justify-between my-4 p-2 bg-purple-300 place-items-center pl-4 rounded-lg">
+                        <div>
 
-                @foreach($booking as $row)
-                    <li class="flex justify-between my-4 p-2 bg-purple-300 place-items-center pl-4 w-booking rounded-lg">
-                        <div>{{$row->day_shift_id}}</div>
-                        <div>{{$row->class_shift_id}}</div>
-                        <div>{{$row->equipment_id}}</div>
-                        <div>{{$row->booked_for}}</div>
-                        <p class="cancel">X</p>
+                            <div class="flex justify-between">
+                                <p>Turno: {{$booking->dayShift->name}} </p>
+                                <p>{{$booking->classShift->name}}</p>
+                            </div>
+                            <p>{{$booking->equipment->name}}</p>
+                            <p>Reservado para: {{$booking->booked_for}}</p>
+                        </div>
 
+                        <form method="POST" action="/reservations">
+                            @csrf
+                            @method('delete')
+                            <button class="rounded-full w-8 h-4 flex justify-center place-items-center">X</button>
+                        </form>
                     </li>
-
                 @endforeach
             </ul>
 
@@ -36,3 +43,5 @@
     </div>
 
 </x-app-layout>
+
+

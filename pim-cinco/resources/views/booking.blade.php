@@ -3,7 +3,7 @@
     <div class="container-booking">
 
         <div class="header mb-4">
-            <p>*-*Data de hoje*-*</p>
+            <p>{{\Illuminate\Support\Carbon::now()->format('d-m-Y')}}</p>
         </div>
 
         <form method="POST" action="">

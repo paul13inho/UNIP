@@ -8,8 +8,15 @@ use Illuminate\Http\Request;
 class ReservationsController extends Controller
 {
     public function index() {
-        $booking = BookEquipment::all();
+        $bookings = BookEquipment::all();
 
-        return view('reservations', ['booking' => $booking]);
+        return view('reservations', ['bookings' => $bookings]);
     }
+
+    public function destroy() {
+
+        return view('dashboard');
+    }
+
+
 }

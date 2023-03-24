@@ -19,7 +19,10 @@ body
 /*END ALL CONTAINERS FORMATING*/
 
 
-
+.bg
+{
+    @apply bg-green-300;
+}
 
 
 /*INDIVIDUAL CONTAINERS FORMATING*/

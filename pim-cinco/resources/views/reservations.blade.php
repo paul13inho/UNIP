@@ -8,10 +8,16 @@
 
         <div class="bookings overflow-x-hidden w-booking">
             <ul>
-                @foreach($bookings as $booking)
-                    <li class="register flex justify-between my-4 p-2 bg-purple-300 place-items-center pl-4 rounded-lg">
-                        <div>
 
+
+                @foreach($bookings as $booking)
+
+                    <form method="POST" action="/reservations">
+                        @csrf
+                        @method('delete')
+                        <input type="hidden" name="booking_id" value="{{ $booking->id }}">
+                        <li class="register flex justify-between my-4 p-2 bg-purple-300 place-items-center pl-4 rounded-lg">
+                        <div>
                             <div class="flex justify-between">
                                 <p>Turno: {{$booking->dayShift->name}} </p>
                                 <p>{{$booking->classShift->name}}</p>
@@ -19,14 +25,11 @@
                             <p>{{$booking->equipment->name}}</p>
                             <p>Reservado para: {{$booking->booked_for}}</p>
                         </div>
-
-                        <form method="POST" action="/reservations">
-                            @csrf
-                            @method('delete')
                             <button class="rounded-full w-8 h-4 flex justify-center place-items-center">X</button>
-                        </form>
                     </li>
+                    </form>
                 @endforeach
+
             </ul>
 
         </div>

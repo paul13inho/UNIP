@@ -22,7 +22,7 @@
             <div>
                 <a href="/reservations">
                     <button class="see">
-                        Vizualizar
+                        Visualizar
                     </button>
                 </a>
             </div>

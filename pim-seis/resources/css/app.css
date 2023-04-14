@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
+
+.main-content-wrapper
+{
+    @apply p-4 border-layout bg-white;
+}
+
+.border-layout
+{
+    @apply border rounded-layout border-5 border-black;
+}
+
+select
+{
+    @apply outline-none w-full py-2 rounded-lg mt-6 text-center text-2xl font-logo;
+}
+
+
 @tailwind utilities;

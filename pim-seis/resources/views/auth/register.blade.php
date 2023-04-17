@@ -14,7 +14,7 @@
             <!-- Position -->
             <div>
                 <x-input-label for="job_position_id" :value="__('Cargo')" />
-                <select for="job_position_id" name="job_position_id" id="job_position">
+                <select name="job_position_id" id="job_position_id">
                     @foreach($jobPosition as $row)
                         <option value="{{ $row->id }}"> {{ $row->name }} </option>
                     @endforeach

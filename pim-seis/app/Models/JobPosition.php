@@ -9,6 +9,8 @@ class JobPosition extends Model
 {
     use HasFactory;
 
+    protected $fillable = [];
+
     public function jobPosition() {
         return $this->belongsTo(JobPosition::class);
     }

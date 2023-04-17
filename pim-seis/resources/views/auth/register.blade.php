@@ -13,8 +13,8 @@
 
             <!-- Position -->
             <div>
-                <x-input-label for="job_position" :value="__('Cargo')" />
-                <select for="job_position" name="position" id="">
+                <x-input-label for="job_position_id" :value="__('Cargo')" />
+                <select for="job_position_id" name="job_position_id" id="job_position">
                     @foreach($jobPosition as $row)
                         <option value="{{ $row->id }}"> {{ $row->name }} </option>
                     @endforeach
@@ -23,14 +23,14 @@
 
             <!-- Email Address -->
             <div class="mt-4">
-                <x-input-label for="email" :value="__('Email')" />
+                <x-input-label for="email" :value="__('E-mail')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__('Senha')" />
 
                 <x-text-input id="password" class="block mt-1 w-full"
                               type="password"
@@ -42,7 +42,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
 
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"
                               type="password"
@@ -51,13 +51,13 @@
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+            <div class="flex items-center justify-around">
+                <a class="underline text-xl uppercase font-logo text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                    {{ __('voltar') }}
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('cadastrar') }}
                 </x-primary-button>
             </div>
         </form>

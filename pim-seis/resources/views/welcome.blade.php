@@ -9,5 +9,11 @@
 <h1 class="text-3xl font-bold underline bg-teal-300">
     Hello world!
 </h1>
+
+<a href="/testes" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">testes</a>
+<a href="/register" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar</a>
+<a href="/login" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">logar</a>
+
+</form>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Status;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/testes', [PageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

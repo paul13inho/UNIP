@@ -10,51 +10,72 @@
 
             <form method="POST" action="{{ route('register') }}" class="">
             @csrf
+            <!-- Bar Code -->
+                <div>
+                    <x-input-label for="bar_code" :value="__('Código de Barras')" />
+                    <x-text-input id="bar_code" type="text" name="bar_code" :value="old('bar_code')" required autofocus autocomplete="name" />
+                    <x-input-error :messages="$errors->get('bar_code')" class="mt-2" />
+                </div>
 
-            <!-- Name -->
+                <!-- Name -->
                 <div>
                     <x-input-label for="name" :value="__('Nome')" />
                     <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
 
-                <!-- Position -->
+                <!-- Category -->
                 <div>
-                    <x-input-label for="job_position_id" :value="__('Cargo')" />
-
+                    <x-input-label for="category" :value="__('Categoria')" />
+                    <select name="category" id="category">
+                        @foreach($category as $row)
+                            <option value="{{ $row->id }}"> {{ $row->name }} </option>
+                        @endforeach
+                    </select>
                 </div>
 
-                <!-- Email Address -->
+                <!-- Manufacturer -->
                 <div class="mt-4">
-                    <x-input-label for="email" :value="__('E-mail')" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    <x-input-label for="manufacturer" :value="__('Fabricante')" />
+                    <x-text-input id="manufacturer" class="block mt-1 w-full" type="text" name="manufacturer" :value="old('manufacturer')" required />
+                    <x-input-error :messages="$errors->get('manufacturer')" class="mt-2" />
                 </div>
 
-                <!-- Password -->
+                <!-- Quantity-->
                 <div class="mt-4">
-                    <x-input-label for="password" :value="__('Senha')" />
-
-                    <x-text-input id="password" class="block mt-1 w-full"
-                                  type="password"
-                                  name="password"
-                                  required autocomplete="new-password" />
-
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    <x-input-label for="quantity" :value="__('Quantidade')" />
+                    <x-text-input id="quantity" class="block mt-1 w-full" type="number" name="quantity" :value="old('quantity')" required />
+                    <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                 </div>
 
-                <!-- Confirm Password -->
+                <!-- Price-->
                 <div class="mt-4">
-                    <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
-
-                    <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                  type="password"
-                                  name="password_confirmation" required autocomplete="new-password" />
-
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                    <x-input-label for="price" :value="__('Preço')" />
+                    <x-text-input id="price" class="block mt-1 w-full" type="number" name="price" :value="old('price')" required />
+                    <x-input-error :messages="$errors->get('price')" class="mt-2" />
                 </div>
 
-                <div class="flex items-center justify-around">
+                <!-- Platform -->
+                <div>
+                    <x-input-label for="platform" :value="__('Plataforma')" />
+                    <select name="platform" id="platform">
+                        @foreach($platform as $row)
+                            <option value="{{ $row->id }}"> {{ $row->name }} </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- Warranty -->
+                <div class="mt-4">
+                    <x-input-label for="warranty" :value="__('Garantia')" />
+                    <select name="warranty" id="warranty">
+                        @foreach($warranty as $row)
+                            <option value="{{ $row->id }}"> {{ $row->name }} </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="flex items-center justify-around mt-10">
                     <a class="underline text-xl uppercase font-logo text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('dashboard') }}">
                         {{ __('voltar') }}
                     </a>

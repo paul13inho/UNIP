@@ -13,6 +13,7 @@
 <a href="/testes" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">testes</a>
 <a href="/register" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar</a>
 <a href="/login" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">logar</a>
+<a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
 
 </form>
 </body>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Status;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('/testes', [PageController::class, 'index']);
+
+Route::get('/register-product', [ProductController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

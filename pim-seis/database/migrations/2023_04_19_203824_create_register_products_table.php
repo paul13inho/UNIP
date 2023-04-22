@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('manufacturer');
             $table->integer('quantity');
             $table->float('price', 8,2);
-            $table->unsignedBigInteger('platform_id');
-            $table->unsignedBigInteger('warranty_id');
+            $table->unsignedBigInteger('platform_id')->nullable();
+            $table->unsignedBigInteger('warranty_id')->nullable();
 
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('platform_id')->references('id')->on('platforms');

@@ -8,7 +8,7 @@
     <div class="m-8">
         <x-main-content-wrapper>
 
-            <form method="POST" action="{{ route('register') }}" class="">
+            <form method="POST">
             @csrf
             <!-- Bar Code -->
                 <div>
@@ -26,8 +26,8 @@
 
                 <!-- Category -->
                 <div>
-                    <x-input-label for="category" :value="__('Categoria')" />
-                    <select name="category" id="category">
+                    <x-input-label for="category_id" :value="__('Categoria')" />
+                    <select name="category_id" id="category">
                         @foreach($category as $row)
                             <option value="{{ $row->id }}"> {{ $row->name }} </option>
                         @endforeach
@@ -57,8 +57,8 @@
 
                 <!-- Platform -->
                 <div>
-                    <x-input-label for="platform" :value="__('Plataforma')" />
-                    <select name="platform" id="platform">
+                    <x-input-label for="platform_id" :value="__('Plataforma')" />
+                    <select name="platform_id" id="platform">
                         @foreach($platform as $row)
                             <option value="{{ $row->id }}"> {{ $row->name }} </option>
                         @endforeach
@@ -67,8 +67,8 @@
 
                 <!-- Warranty -->
                 <div class="mt-4">
-                    <x-input-label for="warranty" :value="__('Garantia')" />
-                    <select name="warranty" id="warranty">
+                    <x-input-label for="warranty_id" :value="__('Garantia')" />
+                    <select name="warranty_id" id="warranty">
                         @foreach($warranty as $row)
                             <option value="{{ $row->id }}"> {{ $row->name }} </option>
                         @endforeach

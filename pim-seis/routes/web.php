@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/testes', [PageController::class, 'index']);
 
 Route::get('/register-product', [ProductController::class, 'index']);
+Route::post('register-product', [ProductController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

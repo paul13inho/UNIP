@@ -47,8 +47,8 @@
     </div>
 
     <div>
-        <x-input-label for="countryState" :value="__('Estadogit ')" />
-        <select name="countryState" id="category">
+        <x-input-label for="countryState" :value="__('Estado')" />
+        <select name="countryState" id="countryState">
             @foreach($countryState as $row)
                 <option value="{{ $row->id }}"> {{ $row->name }} </option>
             @endforeach

@@ -18,5 +18,10 @@ select
     @apply outline-none w-full py-2 rounded-lg mb-4 text-center text-2xl font-logo tracking-widest
 }
 
+h1
+{
+    @apply font-logo text-3xl font-semibold mb-4 text-center text-gray-800 tracking-widest;
+}
+
 
 @tailwind utilities;

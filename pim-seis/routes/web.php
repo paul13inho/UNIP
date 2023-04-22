@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +26,8 @@ Route::get('/testes', [PageController::class, 'index']);
 
 Route::get('/register-product', [ProductController::class, 'index']);
 Route::post('register-product', [ProductController::class, 'store']);
+
+Route::get('/register-client', [ClientController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

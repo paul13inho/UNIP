@@ -14,6 +14,7 @@
 <a href="/register" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar</a>
 <a href="/login" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">logar</a>
 <a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
+<a href="/register-client" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar cliente</a>
 
 </form>
 </body>

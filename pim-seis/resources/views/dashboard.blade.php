@@ -6,12 +6,16 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+        <div class="max-w-7xl mx-auto bg-white space-y-12 p-12 rounded-2xl">
+
+                <div class="text-gray-900 bg-gray-100 rounded-2xl">
                     <a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
                 </div>
-            </div>
+
+                <div class="text-gray-900 bg-gray-100 rounded-2xl">
+                    <a href="/register-client" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar cliente</a>
+                </div>
+
         </div>
     </div>
 </x-app-layout>

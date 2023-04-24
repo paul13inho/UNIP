@@ -28,6 +28,7 @@ Route::get('/register-product', [ProductController::class, 'index']);
 Route::post('register-product', [ProductController::class, 'store']);
 
 Route::get('/register-client', [ClientController::class, 'index']);
+Route::post('/register-client', [ClientController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

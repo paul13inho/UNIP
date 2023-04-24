@@ -55,6 +55,15 @@
         </select>
     </div>
 
+    <div>
+        <x-input-label for="payment" :value="__('Pagamento')" />
+        <select name="payment" id="payment">
+            @foreach($payment as $row)
+                <option value="{{ $row->id }}"> {{ $row->name }} </option>
+            @endforeach
+        </select>
+    </div>
+
 </form>
 
 

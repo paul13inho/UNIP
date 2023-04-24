@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SaleController;
 use App\Models\Status;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,8 @@ Route::post('register-product', [ProductController::class, 'store']);
 
 Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);
+
+Route::get('make-sale', [SaleController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

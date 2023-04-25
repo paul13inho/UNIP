@@ -47,4 +47,14 @@ class ProductController extends Controller
 
         return view('dashboard');
     }
+
+    public function show() {
+        $find_bar_code = $_GET['query'];
+        $product = RegisterProduct::where('bar_code', 'like', $find_bar_code)->get();
+        dd($product);
+        return view('make-sale', compact($product));
+
+
+
+    }
 }

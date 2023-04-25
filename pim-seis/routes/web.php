@@ -27,6 +27,7 @@ Route::get('/testes', [PageController::class, 'index']);
 
 Route::get('/register-product', [ProductController::class, 'index']);
 Route::post('register-product', [ProductController::class, 'store']);
+Route::get('/search');
 
 Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);

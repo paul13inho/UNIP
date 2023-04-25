@@ -11,21 +11,21 @@
             <form method="POST">
             @csrf
             <!-- Bar Code -->
-                <div>
+                <div class="mb-8">
                     <x-input-label for="bar_code" :value="__('Código de Barras')" />
                     <x-text-input id="bar_code" type="text" name="bar_code" :value="old('bar_code')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('bar_code')" class="mt-2" />
                 </div>
 
                 <!-- Name -->
-                <div>
+                <div class="mb-8">
                     <x-input-label for="name" :value="__('Nome')" />
                     <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
 
                 <!-- Category -->
-                <div>
+                <div class="mb-8">
                     <x-input-label for="category_id" :value="__('Categoria')" />
                     <select name="category_id" id="category">
                         @foreach($category as $row)
@@ -35,21 +35,21 @@
                 </div>
 
                 <!-- Manufacturer -->
-                <div class="mt-4">
+                <div class="mb-8">
                     <x-input-label for="manufacturer" :value="__('Fabricante')" />
                     <x-text-input id="manufacturer" class="block mt-1 w-full" type="text" name="manufacturer" :value="old('manufacturer')" required />
                     <x-input-error :messages="$errors->get('manufacturer')" class="mt-2" />
                 </div>
 
                 <!-- Quantity-->
-                <div class="mt-4">
+                <div class="mb-8">
                     <x-input-label for="quantity" :value="__('Quantidade')" />
                     <x-text-input id="quantity" class="block mt-1 w-full" type="number" name="quantity" :value="old('quantity')" required />
                     <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                 </div>
 
                 <!-- Price-->
-                <div class="mt-4">
+                <div class=" mb-8">
                     <x-input-label for="price" :value="__('Preço')" />
                     <x-text-input id="price" class="block mt-1 w-full" type="number" name="price" :value="old('price')" required />
                     <x-input-error :messages="$errors->get('price')" class="mt-2" />

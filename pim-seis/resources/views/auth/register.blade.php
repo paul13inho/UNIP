@@ -5,14 +5,14 @@
         @csrf
 
         <!-- Name -->
-            <div>
+            <div class="mb-8">
                 <x-input-label for="name" :value="__('Nome')" />
                 <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
             <!-- Position -->
-            <div>
+            <div class="mb-8">
                 <x-input-label for="job_position_id" :value="__('Cargo')" />
                 <select name="job_position_id" id="job_position_id">
                     @foreach($jobPosition as $row)
@@ -22,14 +22,14 @@
             </div>
 
             <!-- Email Address -->
-            <div class="mt-4">
+            <div class="mb-8">
                 <x-input-label for="email" :value="__('E-mail')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-text-input id="email" class="block w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <!-- Password -->
-            <div class="mt-4">
+            <div class="mb-8">
                 <x-input-label for="password" :value="__('Senha')" />
 
                 <x-text-input id="password" class="block mt-1 w-full"
@@ -41,7 +41,7 @@
             </div>
 
             <!-- Confirm Password -->
-            <div class="mt-4">
+            <div class="mb-8">
                 <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
 
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"

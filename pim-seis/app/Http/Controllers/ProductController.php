@@ -7,6 +7,7 @@ use App\Models\Platform;
 use App\Models\RegisterProduct;
 use App\Models\Warranty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -48,13 +49,11 @@ class ProductController extends Controller
         return view('dashboard');
     }
 
-    public function show() {
-        $find_bar_code = $_GET['query'];
-        $product = RegisterProduct::where('bar_code', 'like', $find_bar_code)->get();
-        dd($product);
-        return view('make-sale', compact($product));
+    public function show(Request $request) {
 
+        $find_this = RegisterProduct::where('bar_code', 'like', $request->input('find_this'))->get();
 
+        return view('make-sale', ['find_this' => $find_this]);
 
     }
 }

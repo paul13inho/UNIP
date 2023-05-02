@@ -7,7 +7,6 @@ use App\Models\Platform;
 use App\Models\RegisterProduct;
 use App\Models\Warranty;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -51,7 +50,7 @@ class ProductController extends Controller
 
     public function show(Request $request) {
 
-        $find_this = RegisterProduct::where('bar_code', 'like', $request->input('find_this'))->get();
+        $find_this = RegisterProduct::where('bar_code', 'LIKE', $request->find_this ?? '')->get();
 
         return view('make-sale', ['find_this' => $find_this]);
 

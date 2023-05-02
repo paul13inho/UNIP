@@ -16,11 +16,7 @@ class SaleController extends Controller
 
         $item = new ItemsShoppingCart();
 
-        $item->product_id = $request->input('product_id');
-        $item->quantity = $request->input('quantity');
-        $item->bulky_price = $request->input('bulky_price');
 
-        $item->save();
 
         return view('dashboard');
     }

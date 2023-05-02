@@ -1,8 +1,4 @@
 <x-app-layout>
-
-
-
-
     <x-main-content-wrapper>
         <x-main-content-wrapper>
             {{-- SEARCH & ADD --}}
@@ -11,7 +7,7 @@
                 {{-- SEARCH ENGINE --}}
                 <div>
                     <x-input-label for="find_this" :value="__('Código')" />
-                    <x-text-input id="find_this" type="text" name="find_this" :value="old('find_this')" required autofocus autocomplete="find_this" />
+                    <x-text-input id="find_this" type="text" name="find_this" value="" required autofocus autocomplete="find_this" />
                     <x-input-error :messages="$errors->get('find_this')" class="mt-2" />
                 </div>
 
@@ -20,7 +16,7 @@
             </form>
 
             {{-- OTHER DETAILS --}}
-            <form action="" class="flex place-items-end space-x-8">
+            <form action="{{ route('search') }}" method="post" class="flex place-items-end space-x-8">
                 @csrf
 
                 <div class="w-32">
@@ -71,31 +67,31 @@
             <div class="flex place-items-end justify-around">
                 <div>
                     <x-input-label for="bar_code" :value="__('Código')" />
-                    <x-text-input id="bar_code" type="text" name="bar_code" value=" " disabled required autofocus autocomplete="bar_code" />
+                    <x-text-input class="bar_code" type="text" name="bar_code" value=" " disabled required autofocus autocomplete="bar_code" />
                     <x-input-error :messages="$errors->get('bar_code')" class="mt-2" />
                 </div>
 
                 <div class="w-32">
                     <x-input-label for="quantity" :value="__('Qtd')" />
-                    <x-text-input id="quantity" type="number" name="quantity" value=" " disabled required autofocus autocomplete="quantity" />
+                    <x-text-input class="quantity" type="number" name="quantity" value=" " disabled required autofocus autocomplete="quantity" />
                     <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                 </div>
 
                 <div>
                     <x-input-label for="description" :value="__('Descrição')" />
-                    <x-text-input id="description" type="text" name="description" value=" " disabled required autofocus autocomplete="description" />
+                    <x-text-input class="description" type="text" name="description" value=" " disabled required autofocus autocomplete="description" />
                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
                 </div>
 
                 <div class="w-52">
                     <x-input-label for="unitary_price" :value="__('$ Unitário')" />
-                    <x-text-input id="unitary_price" type="number" name="unitary_price" value=" " disabled required autofocus autocomplete="unitary_price" />
+                    <x-text-input class="unitary_price" type="number" name="unitary_price" value=" " disabled required autofocus autocomplete="unitary_price" />
                     <x-input-error :messages="$errors->get('unitary_price')" class="mt-2" />
                 </div>
 
                 <div class="w-52">
                     <x-input-label for="bulky_price" :value="__('$ Total')" />
-                    <x-text-input id="bulky_price" type="number" name="bulky_price" value=" " disabled required autofocus autocomplete="bulky_price" />
+                    <x-text-input class="bulky_price" type="number" name="bulky_price" value=" " disabled required autofocus autocomplete="bulky_price" />
                     <x-input-error :messages="$errors->get('bulky_price')" class="mt-2" />
                 </div>
                 <button class="bg-red-600 text-white text-5xl px-2 rounded-xl">-</button>

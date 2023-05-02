@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ClientSaleController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSaleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaleController;
+use App\Models\ClientSale;
 use App\Models\ProductSale;
 use App\Models\Status;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +36,7 @@ Route::post('/search', [ProductController::class, 'show'])->name('search');
 Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);
 
-Route::get('/client-sale', [PageController::class, 'clientSale']);
+Route::get('/client-sale', [ClientController::class, 'show']);
 Route::post('/client-sale', [ClientController::class, 'show']);
 
 Route::get('/make-sale', [ProductController::class, 'show']);

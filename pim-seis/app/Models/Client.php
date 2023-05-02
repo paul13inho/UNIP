@@ -14,4 +14,8 @@ class Client extends Model
     public function countryState() {
         return $this->hasOne(CountryState::class);
     }
+
+    public function clientSale() {
+        return $this->hasMany(ClientSale::class);
+    }
 }

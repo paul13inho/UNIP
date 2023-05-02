@@ -17,7 +17,7 @@
             </div>
 
             <div class="text-gray-900 bg-gray-100 rounded-2xl">
-                <a href="/make-sale" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">efetuar venda</a>
+                <a href="/client-sale" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">efetuar venda</a>
             </div>
 
             <div class="text-gray-900 bg-gray-100 rounded-2xl">

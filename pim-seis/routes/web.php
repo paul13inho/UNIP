@@ -34,6 +34,9 @@ Route::post('/search', [ProductController::class, 'show'])->name('search');
 Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);
 
+Route::get('/client-sale', [PageController::class, 'clientSale']);
+Route::post('/client-sale', [ClientController::class, 'show']);
+
 Route::get('/make-sale', [ProductController::class, 'show']);
 
 Route::post('/add', [ProductSaleController::class, 'store'])->name('add');

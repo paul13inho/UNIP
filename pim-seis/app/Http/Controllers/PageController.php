@@ -30,4 +30,8 @@ class PageController extends Controller
         ]);
     }
 
+    public function clientSale() {
+        return view('client-sale');
+}
+
 }

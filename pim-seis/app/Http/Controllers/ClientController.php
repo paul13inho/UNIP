@@ -33,4 +33,12 @@ class ClientController extends Controller
 
         return view('dashboard');
     }
+
+    public function show(Request $request) {
+
+        $find_cpf = Client::where('cpf', 'LIKE', $request->find_cpf ?? '')->get();
+
+        return view('client-sale', ['find_cpf' => $find_cpf]);
+
+    }
 }

@@ -8,16 +8,13 @@ use Illuminate\Http\Request;
 class ClientSaleController extends Controller
 {
     public function store(Request $request) {
-
-
-
         $clisale = new ClientSale();
 
-        $clisale->id = $request->input('client_id');
-        $clisale->sale_code = $request->input('sale-code');
+        $clisale->client_id = $request->input('client_id');
+        $clisale->sale_code = $request->input('sale_code');
 
         $clisale->save();
 
-        return view('make-sale');
+        return view('product-sale', ['clisale' => $clisale]);
     }
 }

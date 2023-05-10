@@ -38,10 +38,13 @@ Route::post('/register-client', [ClientController::class, 'store']);
 
 Route::get('/client-sale', [ClientController::class, 'show']);
 Route::post('/client-sale', [ClientController::class, 'show']);
+Route::post('/client-sale-next', [ClientSaleController::class, 'store'])->name('client-sale-next');
+
+Route::get('product-sale', [ProductSaleController::class, 'index']);
 
 Route::get('/make-sale', [ProductController::class, 'show']);
 
-Route::post('/add', [ProductSaleController::class, 'store'])->name('add');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -31,18 +31,16 @@ Route::get('/testes', [PageController::class, 'index']);
 
 Route::get('/register-product', [ProductController::class, 'index']);
 Route::post('register-product', [ProductController::class, 'store']);
-Route::post('/search', [ProductController::class, 'show'])->name('search');
 
 Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);
 
-Route::get('/client-sale', [ClientController::class, 'show']);
-Route::post('/client-sale', [ClientController::class, 'show']);
-Route::post('/client-sale-next', [ClientSaleController::class, 'store'])->name('client-sale-next');
+Route::get('/client-sale', [ClientSaleController::class, 'index']);
+Route::post('/find-cpf', [ClientController::class, 'findCPF'])->name('find-cpf');
 
-Route::get('product-sale', [ProductSaleController::class, 'index']);
-
-Route::get('/make-sale', [ProductController::class, 'show']);
+Route::post('/product-sale', [ClientSaleController::class, 'store'])->name('product-sale');
+Route::post('/find-product', [ProductController::class, 'findProduct'])->name('find-product');
+Route::post('/add-to-cart', [ProductSaleController::class, 'store'])->name('add-to-cart');
 
 
 

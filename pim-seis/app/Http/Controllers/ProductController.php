@@ -48,11 +48,10 @@ class ProductController extends Controller
         return view('dashboard');
     }
 
-    public function show(Request $request) {
+    public function findProduct(Request $request) {
 
         $find_product = RegisterProduct::where('bar_code', 'LIKE', $request->find_product ?? '')->get();
 
-        return view('make-sale', ['find_product' => $find_product]);
-
+        return view('product-sale', ['find_product' => $find_product]);
     }
 }

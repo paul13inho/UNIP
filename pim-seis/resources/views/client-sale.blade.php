@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-main-content-wrapper>
-
-        <form method="post" class="flex place-items-end space-x-8 mb-8">
+        {{-- SEARCH ENGINE --}}
+        <form action="{{ route('find-cpf') }}" method="post" class="flex place-items-end space-x-8 mb-8">
             @csrf
-            {{-- SEARCH ENGINE --}}
+
             <div>
                 <x-input-label for="find_cpf" :value="__('CPF')" />
                 <x-text-input id="find_cpf" type="text" name="find_cpf" value="" required autofocus autocomplete="find_cpf" />
@@ -13,9 +13,10 @@
             <button class="px-10 py-2 flex justify-center text-white font-logo uppercase bg-blue-300 text-2xl rounded-xl">procurar</button>
         </form>
 
-        <form action="{{ route('client-sale-next') }}" method="post" class="flex place-items-end space-x-8 mb-8">
+        {{-- FORM TO BE SENT --}}
+        <form action="{{ route('product-sale') }}" method="post" class="flex place-items-end space-x-8 mb-8">
             @csrf
-            {{-- FORM TO BE SENT --}}
+
             @foreach($find_cpf as $row)
                 <x-text-input id="client_id" type="text" name="client_id" value="{{ $row->id }}" required hidden autofocus autocomplete="client_cpf" />
             @endforeach
@@ -23,7 +24,7 @@
             <div>
                 <x-input-label for="client_name" :value="__('Nome do Cliente')" />
                 @foreach($find_cpf as $row)
-                    <x-text-input id="client_name" type="text" name="client_cpf" value="{{ $row->name }}" readonly required autofocus autocomplete="client_cpf" />
+                    <x-text-input id="client_name" type="text" name="client_name" value="{{ $row->name }}" readonly required autofocus autocomplete="client_name" />
                 @endforeach
                 <x-input-error :messages="$errors->get('client_name')" class="mt-2" />
             </div>

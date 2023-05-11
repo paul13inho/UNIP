@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ClientSaleController extends Controller
 {
+    public function index(){
+        return view('client-sale');
+    }
+
     public function store(Request $request) {
         $clisale = new ClientSale();
 

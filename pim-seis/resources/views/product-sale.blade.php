@@ -45,7 +45,7 @@
                     <x-text-input id="product_id" type="text" name="product_id" :value="$row->id" hidden required />
                 @endforeach
 
-                <x-text-input id="total_price" type="text" name="total_price" class="hidden" value="4800" readonly/>
+{{--                <x-text-input id="total_price" type="text" name="total_price" class="hidden" value="4800" readonly/>--}}
 
                 <div class="w-32">
                     <x-input-label for="quantity" :value="__('Qtd')" />
@@ -53,7 +53,6 @@
                     <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                 </div>
 
-                {{--REFORMATAR ISSO, MANDAR SÓ OS 3 DADOS, CODBARRAS, IDPROD E TOTPRICE, O RESTO FAZER UMA TABBEELA--}}
                 <div>
                     <x-input-label for="bar_code" :value="__('Código')" />
                     @foreach($find_product as $row)
@@ -89,10 +88,10 @@
                 <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">adicionar</button>
             </form>
 
-{{--            --}}{{-- SEPARADOR DE BURRO --}}
-{{--            <span class="py-2 h-2 w-full"> -</span>--}}
+{{--             SEPARADOR DE BURRO--}}
+            <span class="py-2 h-2 w-full"> -</span>
 
-{{--            --}}{{-- LISTA DE COMPRAS --}}
+{{--             LISTA DE COMPRAS--}}
 {{--            <x-main-content-wrapper>--}}
 {{--                <div class="flex place-items-end px-8 space-x-8">--}}
 
@@ -131,6 +130,15 @@
 {{--                </div>--}}
 {{--            </x-main-content-wrapper>--}}
         </x-main-content-wrapper>
+
+        <div class="flex justify-around">
+            <a href="{{ route('product-sale') }}" class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">voltar</a>
+            <form action="{{ route('shopping-cart') }}" method="post">
+                @csrf
+                <x-text-input id="sale_code" type="text" name="sale_code" value="38035" hidden required />
+                <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">listar carrinho</button>
+            </form>
+        </div>
 
 
     </x-main-content-wrapper>

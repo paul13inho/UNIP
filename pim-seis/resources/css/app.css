@@ -5,7 +5,7 @@
 
 .main-content-wrapper
 {
-    @apply p-8 border-layout bg-white;
+    @apply p-8 border-layout bg-white mb-8;
 }
 
 .border-layout
@@ -23,5 +23,21 @@ h1
     @apply font-logo text-3xl font-semibold mb-4 text-center text-gray-800 tracking-widest;
 }
 
+th,
+td
+{
+    @apply w-48 text-start;
+}
+
+tr,
+td
+{
+    @apply flex space-x-24 space-y-2 justify-start;
+}
+
+table
+{
+    @apply font-logo text-xl uppercase flex pl-36;
+}
 
 @tailwind utilities;

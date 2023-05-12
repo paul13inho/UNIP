@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSaleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ShoppingCartController;
 use App\Models\ClientSale;
 use App\Models\ProductSale;
 use App\Models\Status;
@@ -41,6 +42,8 @@ Route::post('/find-cpf', [ClientController::class, 'findCPF'])->name('find-cpf')
 Route::post('/product-sale', [ClientSaleController::class, 'store'])->name('product-sale');
 Route::post('/find-product', [ProductController::class, 'findProduct'])->name('find-product');
 Route::post('/add-to-cart', [ProductSaleController::class, 'store'])->name('add-to-cart');
+
+Route::post('/shopping-cart', [ShoppingCartController::class, 'listShoppingCart'])->name('shopping-cart');
 
 
 

@@ -16,6 +16,7 @@
 <a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
 <a href="/register-client" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar cliente</a>
 <a href="/make-sale" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">efetuar venda</a>
+<a href="/search-price" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">consultar preço</a>
 
 </form>
 </body>

@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSaleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SearchPriceController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Models\ClientSale;
 use App\Models\ProductSale;
@@ -44,6 +45,9 @@ Route::post('/find-product', [ProductController::class, 'findProduct'])->name('f
 Route::post('/add-to-cart', [ProductSaleController::class, 'store'])->name('add-to-cart');
 
 Route::post('/shopping-cart', [ShoppingCartController::class, 'listShoppingCart'])->name('shopping-cart');
+
+Route::get('/search-price', [SearchPriceController::class, 'index']);
+Route::post('/search-price', [SearchPriceController::class, 'index'])->name('search-price');
 
 
 

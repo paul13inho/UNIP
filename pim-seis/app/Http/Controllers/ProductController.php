@@ -54,4 +54,10 @@ class ProductController extends Controller
 
         return view('product-sale', ['find_product' => $find_product]);
     }
+
+
+
+
+
+
 }

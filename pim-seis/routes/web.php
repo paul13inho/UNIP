@@ -38,10 +38,10 @@ Route::get('/register-client', [ClientController::class, 'index']);
 Route::post('/register-client', [ClientController::class, 'store']);
 
 Route::get('/client-sale', [ClientSaleController::class, 'index']);
-Route::post('/find-cpf', [ClientController::class, 'findCPF'])->name('find-cpf');
+Route::post('/client-sale', [ClientSaleController::class, 'index'])->name('find-cpf');
 
 Route::post('/product-sale', [ClientSaleController::class, 'store'])->name('product-sale');
-Route::post('/find-product', [ProductController::class, 'findProduct'])->name('find-product');
+Route::post('/find-product', [ProductSaleController::class, 'findProduct'])->name('find-product');
 Route::post('/add-to-cart', [ProductSaleController::class, 'store'])->name('add-to-cart');
 
 Route::post('/shopping-cart', [ShoppingCartController::class, 'listShoppingCart'])->name('shopping-cart');

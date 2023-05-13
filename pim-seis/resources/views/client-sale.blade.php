@@ -35,6 +35,8 @@
                 <x-input-error :messages="$errors->get('sale_code')" class="mt-2" />
             </div>
 
+            <x-text-input id="find_product" type="text" name="find_product" value="" hidden readonly required autofocus autocomplete="find_product" />
+
             <button class="px-10 py-2 flex justify-center text-white font-logo uppercase bg-yellow-600 text-2xl rounded-xl">iniciar venda</button>
         </form>
     </x-main-content-wrapper>

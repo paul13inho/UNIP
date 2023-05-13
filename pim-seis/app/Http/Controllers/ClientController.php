@@ -10,9 +10,7 @@ class ClientController extends Controller
 {
     public function index() {
         $countryState = CountryState::all();
-        return view('/register-client', [
-            'countryState' => $countryState
-        ]);
+        return view('/register-client', ['countryState' => $countryState]);
     }
 
     public function store(Request $request) {
@@ -34,10 +32,5 @@ class ClientController extends Controller
         return view('dashboard');
     }
 
-    public function findCPF(Request $request) {
 
-        $find_cpf = Client::where('cpf', 'LIKE', $request->find_cpf ?? '')->get();
-
-        return view('client-sale', ['find_cpf' => $find_cpf]);
-    }
 }

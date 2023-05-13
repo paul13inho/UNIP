@@ -1,26 +1,24 @@
 <x-app-layout>
     <x-main-content-wrapper>
 
-{{--        <x-main-content-wrapper>--}}
-{{--            <div class="flex place-items-end justify-between space-x-8 mb-8">--}}
-{{--                <div>--}}
-{{--                    <x-input-label for="client_name" :value="__('Nome do Cliente')" />--}}
-{{--                    <x-text-input id="client_name" type="text" name="client_cpf" value="{{ $clisale->client_id }}" readonly required autofocus autocomplete="client_cpf" />--}}
-{{--                    <x-input-error :messages="$errors->get('client_name')" class="mt-2" />--}}
-{{--                </div>--}}
+        {{-- CLIENT INFO --}}
+        <x-main-content-wrapper>
+            <div class="flex place-items-end justify-between space-x-8 mb-8">
+                <div>
+                    <x-input-label for="client_name" :value="__('Nome do Cliente')" />
+                    <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" readonly required autofocus autocomplete="client_name" />
+                    <x-input-error :messages="$errors->get('client_name')" class="mt-2" />
+                </div>
 
-{{--                <div>--}}
-{{--                    <x-input-label for="sale_code" :value="__('Código de venda')" />--}}
-{{--                    <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" readonly required autofocus autocomplete="sale_code" />--}}
-{{--                    <x-input-error :messages="$errors->get('sale_code')" class="mt-2" />--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                <div>
+                    <x-input-label for="sale_code" :value="__('Código de venda')" />
+                    <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" readonly required autofocus autocomplete="sale_code" />
+                    <x-input-error :messages="$errors->get('sale_code')" class="mt-2" />
+                </div>
+            </div>
+        </x-main-content-wrapper>
 
-
-{{--        </x-main-content-wrapper>--}}
-
-        {{-- SEPARADOR DE BURRO --}}
-        <span class="py-2 h-2 w-full"> -</span>
+        {{-- SEARCH PRODUCT --}}
         <x-main-content-wrapper>
             {{-- SEARCH PRODUCT --}}
             <form action="{{ route('find-product') }}" method="post" class="flex place-items-end space-x-8 mb-8">
@@ -32,20 +30,23 @@
                     <x-input-error :messages="$errors->get('find_product')" class="mt-2" />
                 </div>
 
+                <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" hidden readonly required autofocus autocomplete="client_name" />
+                <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" hidden readonly required autofocus autocomplete="sale_code" />
+
                 <button class="px-10 py-2 flex justify-center text-white font-logo uppercase bg-blue-300 text-2xl rounded-xl">procurar</button>
             </form>
 
-            {{-- ADD PRODUCT TO KART --}}
+            {{-- ADD PRODUCT TO CART --}}
             <form action="{{ route('add-to-cart') }}" method="post" class="flex place-items-end space-x-8">
                 @csrf
 
-                <x-text-input id="sale_code" type="text" name="sale_code" :value="38035" hidden required />
+                <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" hidden readonly required autofocus autocomplete="client_name" />
+                <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" hidden readonly required autofocus autocomplete="sale_code" />
 
                 @foreach($find_product as $row)
-                    <x-text-input id="product_id" type="text" name="product_id" :value="$row->id" hidden required />
+                    <x-text-input id="product_id" type="text" name="product_id" value="{{ $row->id}}" hidden required />
                 @endforeach
 
-{{--                <x-text-input id="total_price" type="text" name="total_price" class="hidden" value="4800" readonly/>--}}
 
                 <div class="w-32">
                     <x-input-label for="quantity" :value="__('Qtd')" />

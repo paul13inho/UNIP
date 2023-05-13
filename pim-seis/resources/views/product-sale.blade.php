@@ -21,10 +21,10 @@
         {{-- SEARCH PRODUCT --}}
         <x-main-content-wrapper>
             {{-- SEARCH PRODUCT --}}
-            <form action="{{ route('find-product') }}" method="post" class="flex place-items-end space-x-8 mb-8">
+            <form action="{{ route('find-product') }}" method="post" class="flex place-items-end mb-8 justify-start">
                 @csrf
 
-                <div>
+                <div class="mr-8">
                     <x-input-label for="find_product" :value="__('Código de barras')" />
                     <x-text-input id="find_product" type="text" name="find_product" value="" required autofocus autocomplete="find_product" />
                     <x-input-error :messages="$errors->get('find_product')" class="mt-2" />
@@ -37,7 +37,7 @@
             </form>
 
             {{-- ADD PRODUCT TO CART --}}
-            <form action="{{ route('add-to-cart') }}" method="post" class="flex place-items-end space-x-8">
+            <form action="{{ route('add-to-cart') }}" method="post" class="flex place-items-end gap-x-8">
                 @csrf
 
                 <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" hidden readonly required autofocus autocomplete="client_name" />
@@ -89,60 +89,16 @@
                 <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">adicionar</button>
             </form>
 
-{{--             SEPARADOR DE BURRO--}}
-            <span class="py-2 h-2 w-full"> -</span>
-
-{{--             LISTA DE COMPRAS--}}
-{{--            <x-main-content-wrapper>--}}
-{{--                <div class="flex place-items-end px-8 space-x-8">--}}
-
-{{--                    <x-text-input class="bar_code" type="text" name="bar_code" value="38035" hidden disabled required autofocus autocomplete="bar_code" />--}}
-
-{{--                    <div>--}}
-{{--                        <x-input-label for="bar_code" :value="__('Código')" />--}}
-{{--                        <x-text-input class="bar_code" type="text" name="bar_code" value=" " disabled required autofocus autocomplete="bar_code" />--}}
-{{--                        <x-input-error :messages="$errors->get('bar_code')" class="mt-2" />--}}
-{{--                    </div>--}}
-
-{{--                    <div class="w-32">--}}
-{{--                        <x-input-label for="quantity" :value="__('Qtd')" />--}}
-{{--                        <x-text-input class="quantity" type="number" name="quantity" value=" " disabled required autofocus autocomplete="quantity" />--}}
-{{--                        <x-input-error :messages="$errors->get('quantity')" class="mt-2" />--}}
-{{--                    </div>--}}
-
-{{--                    <div>--}}
-{{--                        <x-input-label for="description" :value="__('Descrição')" />--}}
-{{--                        <x-text-input class="description" type="text" name="description" value=" " disabled required autofocus autocomplete="description" />--}}
-{{--                        <x-input-error :messages="$errors->get('description')" class="mt-2" />--}}
-{{--                    </div>--}}
-
-{{--                    <div class="w-52">--}}
-{{--                        <x-input-label for="unitary_price" :value="__('$ Unitário')" />--}}
-{{--                        <x-text-input class="unitary_price" type="number" name="unitary_price" value=" " disabled required autofocus autocomplete="unitary_price" />--}}
-{{--                        <x-input-error :messages="$errors->get('unitary_price')" class="mt-2" />--}}
-{{--                    </div>--}}
-
-{{--                    <div class="w-52">--}}
-{{--                        <x-input-label for="bulky_price" :value="__('$ Total')" />--}}
-{{--                        <x-text-input class="bulky_price" type="number" name="bulky_price" value=" " disabled required autofocus autocomplete="bulky_price" />--}}
-{{--                        <x-input-error :messages="$errors->get('bulky_price')" class="mt-2" />--}}
-{{--                    </div>--}}
-{{--                    <button class="bg-red-600 text-white text-5xl px-2 rounded-xl">-</button>--}}
-{{--                </div>--}}
-{{--            </x-main-content-wrapper>--}}
         </x-main-content-wrapper>
 
-        <div class="flex justify-around">
-            <a href="{{ route('product-sale') }}" class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">voltar</a>
+        {{-- LIST CART --}}
+        <div class="flex justify-center">
             <form action="{{ route('shopping-cart') }}" method="post">
                 @csrf
-                <x-text-input id="sale_code" type="text" name="sale_code" value="38035" hidden required />
+                <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" hidden />
+                <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" hidden />
                 <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">listar carrinho</button>
             </form>
         </div>
-
-
     </x-main-content-wrapper>
-
-
 </x-app-layout>

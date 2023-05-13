@@ -45,6 +45,7 @@ Route::post('/find-product', [ProductSaleController::class, 'findProduct'])->nam
 Route::post('/add-to-cart', [ProductSaleController::class, 'store'])->name('add-to-cart');
 
 Route::post('/shopping-cart', [ShoppingCartController::class, 'listShoppingCart'])->name('shopping-cart');
+Route::delete('/shopping-cart', [ShoppingCartController::class, 'delete'])->name('shopping-cart-delete');
 
 Route::get('/search-price', [SearchPriceController::class, 'index']);
 Route::post('/search-price', [SearchPriceController::class, 'index'])->name('search-price');

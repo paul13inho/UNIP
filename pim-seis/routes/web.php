@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CancelSaleController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ClientSaleController;
+use App\Http\Controllers\ManageStockController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSaleController;
@@ -49,6 +51,17 @@ Route::delete('/shopping-cart', [ShoppingCartController::class, 'delete'])->name
 
 Route::get('/search-price', [SearchPriceController::class, 'index']);
 Route::post('/search-price', [SearchPriceController::class, 'index'])->name('search-price');
+
+Route::get('/cancel-sale', [CancelSaleController::class, 'index']);
+
+Route::get('/manage-stock', [ManageStockController::class, 'index']);
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl font-logo text-gray-800 tracking-widest">
+    <x-slot name="header" class="header">
+        <h2>
             {{ __('Cadastrar Produto') }}
         </h2>
     </x-slot>

@@ -40,19 +40,24 @@ table
     @apply font-logo text-xl uppercase flex pl-36;
 }
 
-.main-content-img
+.dashboard-icons
 {
     @apply h-56 mx-auto;
 }
 
 a.dashboard
 {
-    @apply font-logo uppercase text-4xl bg-red-300 rounded-xl text-center h-icon p-4;
+    @apply font-logo uppercase text-4xl bg-gray-300 rounded-xl text-center h-icon p-4 hover:bg-gray-200;
 }
 
 a p
 {
     @apply py-2;
+}
+
+header h2
+{
+    @apply font-semibold text-xl font-logo text-gray-800 tracking-widest;
 }
 
 @tailwind utilities;

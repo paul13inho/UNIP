@@ -1,15 +1,14 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl font-logo text-gray-800 tracking-widest">
-            {{ __('Cadastrar Client') }}
+    <x-slot name="header" class="header">
+        <h2>
+            {{ __('Cadastrar Cliente') }}
         </h2>
     </x-slot>
 
     <div class="m-8">
         <x-main-content-wrapper>
 
-            <form method="POST" class="space-y-6
-">
+            <form method="POST" class="space-y-6">
             @csrf
                 <!-- Personal Info -->
                 <x-main-content-wrapper>

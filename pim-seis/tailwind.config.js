@@ -16,6 +16,7 @@ module.exports = {
             height: {
                 'img': '500px',
                 'main': '800px',
+                'icon': '350px'
             },
             width: {
                 'img': '1000px',

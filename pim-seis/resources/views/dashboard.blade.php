@@ -6,23 +6,39 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto bg-white space-y-12 p-12 rounded-2xl">
+        <div class="max-w-7xl mx-auto rounded-2xl grid grid-cols-3 gap-8">
 
-            <div class="text-gray-900 bg-gray-100 rounded-2xl">
-                <a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
-            </div>
+            <a href="/register-product" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/product.png')}}" alt="">
+                <p>cadastrar produto</p>
+            </a>
 
-            <div class="text-gray-900 bg-gray-100 rounded-2xl">
-                <a href="/register-client" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar cliente</a>
-            </div>
+            <a href="/register-client" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/client.png')}}" alt="">
+                <p>cadastrar cliente</p>
+            </a>
 
-            <div class="text-gray-900 bg-gray-100 rounded-2xl">
-                <a href="/client-sale" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">efetuar venda</a>
-            </div>
+            <a href="/client-sale" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/sell.png')}}" alt="">
+                <p>efetuar <br> venda</p>
+            </a>
 
-            <div class="text-gray-900 bg-gray-100 rounded-2xl">
-                <a href="/search-price" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">consultar produto</a>
-            </div>
+            <a href="/search-price" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/search.png')}}" alt="">
+                <p>consultar preço</p>
+            </a>
+
+            <a href="#" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/cancel.png')}}" alt="">
+                <p>cancelar <br> venda</p>
+            </a>
+
+            <a href="#" class="dashboard">
+                <img class="main-content-img" src="{{asset('img/stock.png')}}" alt="">
+                <p>estoque</p>
+            </a>
+
+
 
         </div>
     </div>

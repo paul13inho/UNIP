@@ -50,7 +50,12 @@
             </x-main-content-wrapper>
 
             <div class="flex justify-center">
-                <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">finalizar venda</button>
+                <form action="{{ route('make-sale') }}" method="post">
+                    @csrf
+                    <x-text-input id="sale_code" type="text" name="sale_code" value="{{ $clisale->sale_code }}" hidden />
+                    <x-text-input id="client_name" type="text" name="client_name" value="{{ $clisale->name }}" hidden />
+                    <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">finalizar venda</button>
+                </form>
             </div>
         </x-main-content-wrapper>
     </div>

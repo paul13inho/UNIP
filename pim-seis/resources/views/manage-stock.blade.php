@@ -30,14 +30,14 @@
                             <form action="{{ route('stock-down') }}" method="post">
                                 @csrf
                                 <input type="text" name="product_id" value="{{ $row->id }}" hidden>
-                                <td class="w-8"><button class="bg-red-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center">-</button></td>
+                                <td class="w-8"><button class="bg-red-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center hover:bg-red-400">-</button></td>
                             </form>
 
                             {{--ADD TO STOCK--}}
                             <form action="{{ route('stock-up') }}" method="post">
                                 @csrf
                                 <input type="text" name="product_id" value="{{ $row->id }}" hidden>
-                                <td class="w-8"><button class="bg-green-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center">+</button></td>
+                                <td class="w-8"><button class="bg-green-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center hover:bg-green-400">+</button></td>
                             </form>
 
                         </tr>

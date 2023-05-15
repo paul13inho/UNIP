@@ -15,5 +15,9 @@ class ClientSale extends Model
         return $this->hasOne(Client::class);
     }
 
+    public function makeSaleClientSale(){
+        return $this->belongsToMany(MakeSale::class);
+    }
+
 
 }

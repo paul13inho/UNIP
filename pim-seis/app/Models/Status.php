@@ -14,4 +14,8 @@ class Status extends Model
     public function status() {
         return $this->belongsTo(Status::class);
     }
+
+    public function paymentStatus() {
+        return $this->hasMany(MakeSale::class);
+    }
 }

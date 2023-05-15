@@ -58,7 +58,7 @@
 
                     <div class="w-32">
                         <x-input-label for="quantity" :value="__('Qtd')" />
-                        <x-text-input id="quantity" class="quantity" type="text" name="qtd" value="" min="0" oninput="total()" required autofocus autocomplete="quantity" />
+                        <x-text-input id="quantity" class="quantity" type="text" name="qtd" value="" min="0" required autofocus autocomplete="quantity" />
                         <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                     </div>
 

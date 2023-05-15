@@ -40,6 +40,11 @@ table
     @apply font-logo text-xl uppercase flex pl-36;
 }
 
+table .stock
+{
+    @apply font-logo text-xl uppercase;
+}
+
 .dashboard-icons
 {
     @apply h-56 mx-auto;

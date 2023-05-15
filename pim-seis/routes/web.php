@@ -55,6 +55,8 @@ Route::post('/search-price', [SearchPriceController::class, 'index'])->name('sea
 Route::get('/cancel-sale', [CancelSaleController::class, 'index']);
 
 Route::get('/manage-stock', [ManageStockController::class, 'index']);
+Route::post('/stock-down', [ManageStockController::class, 'down'])->name('stock-down');
+Route::post('/stock-up', [ManageStockController::class, 'up'])->name('stock-up');
 
 
 

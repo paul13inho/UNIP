@@ -46,7 +46,7 @@
             </x-main-content-wrapper>
 
             <div class="flex justify-center">
-                <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">finalizar venda</button>
+                <a href="{{ route('dashboard') }}" class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">voltar</a>
             </div>
         </x-main-content-wrapper>
     </div>

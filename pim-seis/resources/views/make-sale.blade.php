@@ -19,8 +19,7 @@
 
             {{--SHOPPING CART INFO--}}
             <x-main-content-wrapper>
-
-                <table>
+                <table class="end-sale">
                     <tr>
                         <th>código</th>
                         <th>qtd</th>

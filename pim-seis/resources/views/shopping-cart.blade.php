@@ -18,7 +18,7 @@
 
             <x-main-content-wrapper>
 
-                <table>
+                <table class="cart">
                     <tr>
                         <th>código</th>
                         <th>qtd</th>
@@ -41,7 +41,7 @@
                                 <input type="text" name="product_id" value="{{ $row->product_id }}" hidden>
                                 <input type="text" name="sale_code" value="{{ $row->sale_code }}" hidden>
                                 <input type="text" name="client_name" value="{{ $clisale->name }}" hidden>
-                                <td><button class="bg-red-600 text-white px-1 rounded-full font-logo text-xl">-</button></td>
+                                <td class="w-8"><button class="bg-red-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center hover:bg-red-400">-</button></td>
                             </form>
 
                         </tr>

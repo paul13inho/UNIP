@@ -35,14 +35,24 @@ td
     @apply flex space-x-24 space-y-2 justify-start;
 }
 
-table
+table.cart
 {
-    @apply font-logo text-xl uppercase flex pl-36;
+    @apply font-logo text-xl uppercase flex justify-center;
 }
 
-table .stock
+table.stock
 {
-    @apply font-logo text-xl uppercase;
+    @apply font-logo text-xl uppercase flex justify-center;
+}
+
+table.cancel
+{
+    @apply font-logo text-lg uppercase flex justify-center;
+}
+
+table.end-sale
+{
+    @apply font-logo text-lg uppercase flex justify-center;
 }
 
 .dashboard-icons

@@ -44,6 +44,7 @@ class MakeSaleController extends Controller
         $make_sale->payment_id = $request->input('payment_type');
         $make_sale->payment_status_id = $request->input('payment_status');
         $make_sale->sale_status_id = $request->input('sale_status');
+        $make_sale->total = $request->input('total');
 //        dd($make_sale);
         $make_sale->save();
         echo 'tô no make-sale controller';

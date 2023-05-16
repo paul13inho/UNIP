@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('payment_id');
             $table->unsignedBigInteger('payment_status_id');
             $table->unsignedBigInteger('sale_status_id');
-            $table->double('total');
+            $table->double('total')->nullable();
 
             $table->foreign('client_sale_id')->references('id')->on('client_sales');
             $table->foreign('product_sale_id')->references('id')->on('product_sales');

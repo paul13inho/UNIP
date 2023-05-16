@@ -54,6 +54,7 @@ Route::get('/search-price', [SearchPriceController::class, 'index']);
 Route::post('/search-price', [SearchPriceController::class, 'index'])->name('search-price');
 
 Route::post('/make-sale', [MakeSaleController::class, 'index'])->name('make-sale');
+Route::post('/sale-end', [MakeSaleController::class, 'store'])->name('sale-end');
 
 Route::get('/cancel-sale', [CancelSaleController::class, 'index']);
 

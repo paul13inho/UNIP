@@ -33,7 +33,7 @@
                             <td>{{ $row->quantity }}</td>
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->price }}</td>
-                            <td>{{ $row->total_price }}0</td>
+                            <td>{{ $row->total_price }}</td>
 
                             <form action="{{ route('shopping-cart-delete') }}" method="post">
                                 @csrf

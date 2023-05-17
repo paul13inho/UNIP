@@ -8,7 +8,7 @@
     <div class="m-8">
         <x-main-content-wrapper>
 
-            <form method="POST" class="space-y-6">
+            <form method="POST" class="space-y-6 w-1/2 mx-auto">
             @csrf
                 <!-- Personal Info -->
                 <x-main-content-wrapper>
@@ -102,9 +102,7 @@
                         {{ __('voltar') }}
                     </a>
 
-                    <x-primary-button class="ml-4">
-                        {{ __('cadastrar') }}
-                    </x-primary-button>
+                    <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">cadastrar</button>
                 </div>
             </form>
 

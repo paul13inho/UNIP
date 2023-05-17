@@ -27,15 +27,13 @@
             </div>
 
             <div class="flex items-center justify-around">
-                @if (Route::has('password.request'))
-                    <a class="underline text-xl uppercase font-logo text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('esqueci a senha') }}
-                    </a>
-                @endif
 
-                <x-primary-button class="ml-3">
-                    {{ __('entrar') }}
-                </x-primary-button>
+                <a class="underline text-xl uppercase font-logo text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                    {{ __('voltar') }}
+                </a>
+
+                <button class="px-10 py-2 text-white font-logo uppercase bg-green-300 text-2xl rounded-xl">entrar</button>
+
             </div>
         </form>
 

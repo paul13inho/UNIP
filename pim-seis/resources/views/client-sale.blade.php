@@ -9,7 +9,7 @@
     <div class="m-8">
         <x-main-content-wrapper>
             {{-- SEARCH ENGINE --}}
-            <form action="{{ route('find-cpf') }}" method="post" class="flex place-items-end space-x-8 mb-8">
+            <form action="{{ route('find-cpf') }}" method="post" class="flex place-items-end space-x-8 mb-8 w-1/2 mx-auto">
                 @csrf
 
                 <div>
@@ -22,7 +22,7 @@
             </form>
 
             {{-- FORM TO BE SENT --}}
-            <form action="{{ route('product-sale') }}" method="post" class="flex place-items-end space-x-8 mb-8">
+            <form action="{{ route('product-sale') }}" method="post" class="flex place-items-end space-x-8 mb-8 w-1/2 mx-auto">
                 @csrf
 
 

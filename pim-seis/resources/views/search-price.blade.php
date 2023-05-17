@@ -11,7 +11,7 @@
 
             <x-main-content-wrapper>
                 {{-- SEARCH PRODUCT --}}
-                <form action="{{ route('search-price') }}" method="post" class="flex place-items-end justify-start mb-8">
+                <form action="{{ route('search-price') }}" method="post" class="flex place-items-end justify-start mb-8 w-1/2 mx-auto">
                     @csrf
 
                     <div class="mr-8">
@@ -24,7 +24,7 @@
                 </form>
 
                 {{-- ADD PRODUCT TO KART --}}
-                <div class="flex place-items-end space-x-8">
+                <div class="flex place-items-end space-x-8 w-1/2 mx-auto">
 
                     <div>
                         <x-input-label for="bar_code" :value="__('Código')" />

@@ -14,20 +14,7 @@ class PageController extends Controller
 {
 
     public function index() {
-        $status = Status::all();
-        $platform = Platform::all();
-        $warranty = Warranty::all();
-        $category = Category::all();
-        $countryState = CountryState::all();
-        $payment = Payment::all();
-        return view('/testes', [
-            'status' => $status,
-            'platform' => $platform,
-            'warranty' => $warranty,
-            'category' => $category,
-            'countryState' => $countryState,
-            'payment' => $payment,
-        ]);
+        return redirect()->route('welcome');
     }
 
 

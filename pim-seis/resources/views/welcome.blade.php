@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 </head>
-<body>
-<h1 class="text-3xl font-bold underline bg-teal-300">
-    Hello world!
-</h1>
+<body class="flex place-items-center h-screen">
 
-<a href="/testes" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">testes</a>
-<a href="/register" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar</a>
-<a href="/login" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">logar</a>
-<a href="/register-product" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar produto</a>
-<a href="/register-client" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">cadastrar cliente</a>
-<a href="/make-sale" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">efetuar venda</a>
-<a href="/search-price" class="font-logo uppercase px-8 my-8 inline-flex text-4xl">consultar preço</a>
+<div class="max-w-7xl mx-auto rounded-2xl grid grid-cols-2 gap-8 py-8">
+    <a href="/register" class="dashboard">
+        <img class="dashboard-icons" src="{{asset('img/client.png')}}" alt="">
+        <p>cadastrar usuário</p>
+    </a>
 
+    <a href="/{{ route('login') }}" class="dashboard">
+        <img class="dashboard-icons" src="{{asset('img/client.png')}}" alt="">
+        <p>logar</p>
+    </a>
+</div>
 </form>
 </body>
 </html>

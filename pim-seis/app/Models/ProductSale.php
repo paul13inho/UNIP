@@ -9,8 +9,8 @@ class ProductSale extends Model
 {
     use HasFactory;
 
-    public function productSale() {
-        return $this->hasMany(RegisterProduct::class);
+    public function registerProduct() {
+        return $this->belongsTo(RegisterProduct::class, 'product_id');
     }
 
     public function makeSaleProductSale(){

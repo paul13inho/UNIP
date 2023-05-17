@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RegisterProduct extends Model
 {
     use HasFactory;
+    protected $table = 'register_products';
 
     protected $fillable = [];
 
@@ -22,4 +23,9 @@ class RegisterProduct extends Model
     public function warranty() {
         return $this->hasOne(Warranty::class);
     }
+
+    public function productSales(){
+        return $this->hasMany(ProductSale::class);
+    }
+
 }

@@ -19,7 +19,8 @@ class ManageStockController extends Controller
         DB::table('register_products')->where('id', $down)->decrement('quantity');
 
         $stock = RegisterProduct::all();
-        return view('manage-stock', ['stock' => $stock]);
+
+        return redirect()->route('manage-stock');
     }
 
     public function up(Request $request){
@@ -27,6 +28,6 @@ class ManageStockController extends Controller
         DB::table('register_products')->where('id', $up)->increment('quantity');
 
         $stock = RegisterProduct::all();
-        return view('manage-stock', ['stock' => $stock]);
+        return redirect()->route('manage-stock');
     }
 }

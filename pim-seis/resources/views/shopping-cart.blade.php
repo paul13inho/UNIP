@@ -28,10 +28,11 @@
                     </tr>
 
                     @foreach($find_product_sale as $row)
+
                         <tr>
                             <td>{{ $row->product_id }}</td>
                             <td>{{ $row->quantity }}</td>
-                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->registerProduct->name }}</td>
                             <td>{{ $row->price }}</td>
                             <td>{{ $row->total_price }}</td>
 

@@ -25,15 +25,15 @@
             <form action="{{ route('product-sale') }}" method="post" class="flex place-items-end space-x-8 mb-8">
                 @csrf
 
-                @foreach($find_cpf as $row)
-                    <x-text-input id="client_id" type="text" name="client_id" value="{{ $row->id }}" required hidden autofocus autocomplete="client_cpf" />
-                @endforeach
+
+                    <x-text-input id="client_id" type="text" name="client_id" value="{{ $find_cpf->id ?? ''}}" required hidden autofocus autocomplete="client_cpf" />
+
 
                 <div>
                     <x-input-label for="client_name" :value="__('Nome do Cliente')" />
-                    @foreach($find_cpf as $row)
-                        <x-text-input id="client_name" type="text" name="client_name" value="{{ $row->name }}" readonly required autofocus autocomplete="client_name" />
-                    @endforeach
+
+                        <x-text-input id="client_name" type="text" name="client_name" value="{{ $find_cpf->name ?? '' }}" readonly required autofocus autocomplete="client_name" />
+
                     <x-input-error :messages="$errors->get('client_name')" class="mt-2" />
                 </div>
 

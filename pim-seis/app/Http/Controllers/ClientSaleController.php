@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ClientSaleController extends Controller
 {
     public function index(Request $request){
-        $find_cpf = Client::where('cpf', 'LIKE', $request->find_cpf ?? '')->get();
+        $find_cpf = Client::where('cpf', 'LIKE', $request->find_cpf ?? '')->first();
 
         return view('client-sale', ['find_cpf' => $find_cpf]);
     }

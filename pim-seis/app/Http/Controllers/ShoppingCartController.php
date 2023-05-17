@@ -25,15 +25,6 @@ class ShoppingCartController extends Controller
         $delete_product_sale = ProductSale::where('product_id', 'LIKE', $request->product_id)->where('sale_code', 'LIKE', $request->sale_code);
         $delete_product_sale->delete();
 
-        $clisale = new ClientSale();
-
-        $clisale->name = $request->input('client_name');
-        $clisale->sale_code = $request->input('sale_code');
-
-
-
-        $find_product_sale = ProductSale::where('sale_code', 'LIKE', $request->sale_code)->get();
-
-        return view('shopping-cart', ['clisale' => $clisale, 'find_product_sale' => $find_product_sale]);
+        return redirect()->route('shopping-cart');
     }
 }

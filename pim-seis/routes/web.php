@@ -9,12 +9,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductSaleController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SearchPriceController;
 use App\Http\Controllers\ShoppingCartController;
-use App\Models\ClientSale;
-use App\Models\ProductSale;
-use App\Models\Status;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,13 +55,9 @@ Route::post('/sale-end', [MakeSaleController::class, 'store'])->name('sale-end')
 
 Route::get('/cancel-sale', [CancelSaleController::class, 'index']);
 
-Route::get('/manage-stock', [ManageStockController::class, 'index']);
+Route::get('/manage-stock', [ManageStockController::class, 'index'])->name('manage-stock');
 Route::post('/stock-down', [ManageStockController::class, 'down'])->name('stock-down');
 Route::post('/stock-up', [ManageStockController::class, 'up'])->name('stock-up');
-
-
-
-
 
 
 

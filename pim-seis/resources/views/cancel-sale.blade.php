@@ -21,20 +21,21 @@
                     </tr>
 
                     @foreach($cancel_sale as $row)
+{{--@dd($row)--}}
+
                         <tr>
-                            <td class="w-36">{{ $row->client_sale_id }}</td>
+                            <td class="w-36">{{ $row->productSale->sale_code }}</td>
                             <td class="w-40">{{ $row->created_at }}</td>
-                            <td class="w-36">{{ $row->payment_id }}</td>
-                            <td class="w-36">{{ $row->payment_status_id }}</td>
-                            <td class="w-32">{{ $row->sale_status_id }}</td>
+                            <td class="w-36">{{ $row->paymentType->name }}</td>
+                            <td class="w-36">{{ $row->statuses->name }}</td>
+                            <td class="w-32">{{ $row->statuses->name }}</td>
                             <td class="w-28">{{ $row->total }}</td>
 
-                            <form>
+                            <form action="{{ route('cancel-sale.delete') }}" method="post">
                                 @csrf
-{{--                                @method('delete')--}}
-                                <input type="text" name="product_id" value="" hidden>
-                                <input type="text" name="sale_code" value="" hidden>
-                                <input type="text" name="client_name" value="" hidden>
+                                @method('delete')
+                                <input type="text" name="client_sale_id" value="{{ $row->client_sale_id }}" hidden>
+                                <input type="text" name="product_sale_id" value="{{ $row->product_sale_id }}" hidden>
                                 <td class="w-8 flex place-items-center"><button class="bg-red-600 text-white px-1 rounded-full font-logo text-xl h-6 w-6 flex place-items-center justify-center hover:bg-red-400">-</button></td>
                             </form>
                         </tr>

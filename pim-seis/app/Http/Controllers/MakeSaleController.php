@@ -47,6 +47,5 @@ class MakeSaleController extends Controller
         $make_sale->total = $request->input('total');
 //        dd($make_sale);
         $make_sale->save();
-        echo 'tô no make-sale controller';
     }
 }

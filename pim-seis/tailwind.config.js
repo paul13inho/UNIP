@@ -20,6 +20,7 @@ module.exports = {
             },
             width: {
                 'img': '1000px',
+                'bar-code': '350px'
             },
             maxWidth: {
                 '1/2': '75%',

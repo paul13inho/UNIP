@@ -10,10 +10,18 @@ class MakeSale extends Model
     use HasFactory;
 
     public function productSale(){
-        return $this->hasOne(ProductSale::class);
+        return $this->belongsTo(ProductSale::class, 'product_sale_id');
     }
 
     public function clientSale(){
         return $this->hasOne(ClientSale::class);
+    }
+
+    public function statuses(){
+        return $this->belongsTo(Status::class, 'payment_status_id');
+    }
+
+    public function paymentType(){
+        return $this->belongsTo(Payment::class, 'payment_id');
     }
 }

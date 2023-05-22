@@ -16,6 +16,6 @@ class Status extends Model
     }
 
     public function paymentStatus() {
-        return $this->hasMany(MakeSale::class);
+        return $this->hasOne(MakeSale::class);
     }
 }

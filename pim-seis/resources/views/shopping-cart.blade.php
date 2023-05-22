@@ -30,10 +30,10 @@
                     @foreach($find_product_sale as $row)
 
                         <tr>
-                            <td>{{ $row->product_id }}</td>
+                            <td>{{ $row->registerProduct->bar_code }}</td>
                             <td>{{ $row->quantity }}</td>
                             <td>{{ $row->registerProduct->name }}</td>
-                            <td>{{ $row->price }}</td>
+                            <td>{{ $row->registerProduct->price }}</td>
                             <td>{{ $row->total_price }}</td>
 
                             <form action="{{ route('shopping-cart-delete') }}" method="post">

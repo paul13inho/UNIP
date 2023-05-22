@@ -24,37 +24,29 @@
                 </form>
 
                 {{-- ADD PRODUCT TO KART --}}
-                <div class="flex place-items-end space-x-8 w-1/2 mx-auto">
+                <div class="flex place-items-end space-x-8 justify-center">
 
-                    <div>
+                    <div class="w-bar-code">
                         <x-input-label for="bar_code" :value="__('Código')" />
-                        @foreach($search_price as $row)
-                            <x-text-input id="bar_code" type="text" name="bar_code" value="{{ $row->bar_code }}" required readonly autofocus autocomplete="bar_code" />
-                        @endforeach
+                            <x-text-input id="bar_code" type="text" name="bar_code" value="{{ $search_price->bar_code ?? ''}}" required readonly autofocus autocomplete="bar_code" />
                         <x-input-error :messages="$errors->get('bar_code')" class="mt-2" />
                     </div>
 
                     <div class="w-32">
                         <x-input-label for="quantity" :value="__('Estoque')" />
-                        @foreach($search_price as $row)
-                            <x-text-input id="quantity" type="number" name="quantity" value="{{ $row->quantity }}" readonly required autofocus autocomplete="quantity" />
-                        @endforeach
+                            <x-text-input id="quantity" type="number" name="quantity" value="{{ $search_price->quantity ?? ''}}" readonly required autofocus autocomplete="quantity" />
                         <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                     </div>
 
                     <div>
                         <x-input-label for="description" :value="__('Descrição')" />
-                        @foreach($search_price as $row)
-                            <x-text-input id="description" type="text" name="description" value="{{ $row->name }}" readonly required autofocus autocomplete="description" />
-                        @endforeach
+                            <x-text-input id="description" type="text" name="description" value="{{ $search_price->name ?? ''}}" readonly required autofocus autocomplete="description" />
                         <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
 
                     <div class="w-52">
                         <x-input-label for="unitary_price" :value="__('$ Unitário')" />
-                        @foreach($search_price as $row)
-                            <x-text-input id="unitary_price" class="unitary_price" type="number" name="unitary_price" value="{{ $row->price }}" readonly required autofocus autocomplete="unitary_price" />
-                        @endforeach
+                            <x-text-input id="unitary_price" class="unitary_price" type="number" name="unitary_price" value="{{ $search_price->price ?? ''}}" readonly required autofocus autocomplete="unitary_price" />
                         <x-input-error :messages="$errors->get('unitary_price')" class="mt-2" />
                     </div>
 

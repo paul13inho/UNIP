@@ -53,7 +53,8 @@ Route::post('/search-price', [SearchPriceController::class, 'index'])->name('sea
 Route::post('/make-sale', [MakeSaleController::class, 'index'])->name('make-sale');
 Route::post('/sale-end', [MakeSaleController::class, 'store'])->name('sale-end');
 
-Route::get('/cancel-sale', [CancelSaleController::class, 'index']);
+Route::get('/cancel-sale', [CancelSaleController::class, 'index'])->name('cancel-sale');
+Route::delete('/cancel-sale', [CancelSaleController::class, 'delete'])->name('cancel-sale.delete');
 
 Route::get('/manage-stock', [ManageStockController::class, 'index'])->name('manage-stock');
 Route::post('/stock-down', [ManageStockController::class, 'down'])->name('stock-down');
